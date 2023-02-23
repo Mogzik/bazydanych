@@ -6,7 +6,7 @@ USE zapytania_mazgaj;
 
 CREATE TABLE pracownicy
 (
-id_stanowiska INT PRIMARY KEY AUTO_INCREMENT,
+id INT PRIMARY KEY AUTO_INCREMENT,
 imie VARCHAR(20) NOT NULL,  
 nazwisko VARCHAR(20) NOT NULL, 
 placa DECIMAL(7,2) NOT NULL,
@@ -36,3 +36,23 @@ INSERT INTO pracownicy
 VALUES (10,'Kamil', 'Borowski', 1600.00, 'sprzedawca', 95059515432);
 INSERT INTO pracownicy
 VALUES (11,'Maksymilian', 'Mazgaj', 3200.00, 'kierownik', 07301703177);
+
+SELECT  imie, nazwisko, stanowisko FROM pracownicy;
+
+SELECT  imie, nazwisko, placa AS wynagrodzenie FROM pracownicy;
+
+SELECT * FROM pracownicy ORDER BY nazwisko;
+
+SELECT * FROM pracownicy ORDER BY nazwisko DESC;
+
+SELECT *FROM pracownicy ORDER BY nazwisko ASC,  placa DESC;
+
+SELECT * FROM pracownicy WHERE nazwisko=’Kowalski’;
+
+SELECT * FROM pracownicy WHERE placa < 1500;
+
+SELECT * FROM pracownicy WHERE id >= 4 AND id< = 8;
+
+SELECT * FROM pracownicy WHERE id BETWEEN 4 And 8;
+
+SELECT * FROM pracownicy WHERE placa BETWEEN 1500 AND 1700 ORDER BY placa;
