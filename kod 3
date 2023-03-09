@@ -1,1 +1,11 @@
-
+12 SELECT MIN(placa) AS ”Najnizsze wynagrodzenie” FROM pracownicy;
+13 SELECT COUNT(*) AS "liczba osob na stanowisku magazyniera" FROM pracownicy WHERE stanowisko = 'magazynier';
+14 SELECT AVG(placa) AS "srednie wynagrodzenie" FROM pracownicy WHERE stanowisko = 'kierownik';
+15 SELECT MIN(placa) AS "Najnizsze wynagrodzenie"FROM pracownicy WHERE stanowisko = 'sprzedawca';
+16 SELECT AVG(placa) AS "Srednie wynagrodzenie", MIN(placa) AS "Najnizsze wynagrodzenie", MAX(placa) AS "Najwyzsze wynagrodzenie" FROM pracownicy WHERE stanowisko = 'sprzedawca';
+17 SELECT SUM(placa) AS ”Suma plac” FROM pracownicy WHERE stanowisko = 'sprzedawca';
+18 SELECT imie, AVG (placa) AS "Srednia Placa" FROM pracownicy GROUP BY stanowisko ORDER BY "Srednia Placa" DESC;
+19 SELECT imie, nazwisko FROM pracownicy WHERE placa = (SELECT MAX(placa) FROM pracownicy);
+20 SELECT stanowisko, SUM(placa) AS "suma wyplat" FROM pracownicy GROUP BY stanowisko;
+21 SELECT stanowisko, COUNT(*) AS "liczba pracownikow" FROM pracownicy GROUP BY stanowisko ORDER BY stanowisko ASC;
+22 SELECT stanowisko, MIN(placa) AS "Minimalne", MAX(placa) AS "Maksymalne", AVG(placa) AS "srednie" FROM pracownicy GROUP BY stanowisko;
